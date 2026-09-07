@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- MODELO DE EXEMPLO (MVP). Substitua por assets/moldura1.png (1000x1000,
+       fundo transparente) quando a arte final chegar e ajuste js/config.js.
+       Marcadores preenchidos pela aplicacao: {{NOME}} {{NUMERO}} {{PARTIDO}}
+       {{SLOGAN}} {{COR_PRIMARIA}} {{COR_ESCURA}} {{COR_DESTAQUE}} -->
+  <defs>
+    <linearGradient id="faixa" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0" stop-color="{{COR_ESCURA}}"/>
+      <stop offset="1" stop-color="{{COR_PRIMARIA}}"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .nome   { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; }
+    .texto  { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; }
+  </style>
+
+  <!-- faixa superior fina -->
+  <rect x="0" y="0" width="1000" height="14" fill="{{COR_DESTAQUE}}"/>
+
+  <!-- onda de apoio + faixa inferior -->
+  <path d="M0 742 C 240 686, 470 806, 1000 700 L1000 1000 L0 1000 Z" fill="{{COR_DESTAQUE}}" opacity="0.55"/>
+  <path d="M0 782 C 240 726, 470 846, 1000 740 L1000 1000 L0 1000 Z" fill="url(#faixa)"/>
+
+  <!-- slogan vertical na lateral -->
+  <text class="texto" transform="translate(56 700) rotate(-90)" font-size="25"
+        letter-spacing="7" fill="{{COR_ESCURA}}" opacity="0.55">{{SLOGAN}}</text>
+
+  <!-- nome e numero -->
+  <text class="nome" x="62" y="905" font-size="66" fill="#ffffff" letter-spacing="0.5">{{NOME}}</text>
+  <text class="texto" x="64" y="948" font-size="26" fill="#ffffff" opacity="0.8"
+        letter-spacing="4">{{PARTIDO}}</text>
+
+  <rect x="742" y="852" width="200" height="92" rx="46" fill="{{COR_DESTAQUE}}"/>
+  <text class="nome" x="842" y="915" font-size="50" fill="{{COR_ESCURA}}"
+        text-anchor="middle">{{NUMERO}}</text>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- MODELO DE EXEMPLO (MVP). Substitua por assets/moldura3.png quando a arte
+       final chegar. Marcadores: {{NOME}} {{NUMERO}} {{PARTIDO}} {{SLOGAN}} -->
+  <style>
+    .nome  { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; }
+    .texto { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; }
+  </style>
+
+  <!-- moldura de borda (centro transparente) -->
+  <rect x="14" y="14" width="972" height="972" rx="34" fill="none"
+        stroke="{{COR_PRIMARIA}}" stroke-width="28"/>
+  <rect x="36" y="36" width="928" height="928" rx="20" fill="none"
+        stroke="{{COR_DESTAQUE}}" stroke-width="6" opacity="0.85"/>
+
+  <!-- cantos de destaque -->
+  <path d="M28 190 L28 60 Q28 28 60 28 L190 28" fill="none"
+        stroke="{{COR_DESTAQUE}}" stroke-width="18" stroke-linecap="round"/>
+  <path d="M972 810 L972 940 Q972 972 940 972 L810 972" fill="none"
+        stroke="{{COR_DESTAQUE}}" stroke-width="18" stroke-linecap="round"/>
+
+  <!-- placa inferior -->
+  <rect x="72" y="786" width="856" height="156" rx="26" fill="{{COR_PRIMARIA}}"/>
+  <rect x="72" y="786" width="18" height="156" rx="9" fill="{{COR_DESTAQUE}}"/>
+
+  <text class="nome" x="118" y="861" font-size="58" fill="#ffffff">{{NOME}}</text>
+  <text class="texto" x="120" y="906" font-size="25" fill="#ffffff" opacity="0.82"
+        letter-spacing="2">{{SLOGAN}}</text>
+
+  <rect x="716" y="812" width="184" height="104" rx="20" fill="{{COR_DESTAQUE}}"/>
+  <text class="nome" x="808" y="882" font-size="52" fill="{{COR_ESCURA}}"
+        text-anchor="middle">{{NUMERO}}</text>
+
+  <!-- etiqueta superior -->
+  <rect x="380" y="52" width="240" height="60" rx="30" fill="{{COR_PRIMARIA}}"/>
+  <text class="texto" x="500" y="92" font-size="26" fill="#ffffff"
+        text-anchor="middle" letter-spacing="4">{{PARTIDO}}</text>
+</svg>

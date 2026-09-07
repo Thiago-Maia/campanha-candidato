@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Crie sua foto de apoio</title>
+  <meta name="description" content="Escolha sua foto, ajuste o enquadramento e baixe sua imagem pronta.">
+  <meta name="theme-color" content="#0f5f9e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crie sua foto de apoio">
+  <meta property="og:description" content="Escolha sua foto, ajuste o enquadramento e baixe sua imagem pronta.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <div class="shell">
+      <p class="eyebrow"><span class="eyebrow__mark" aria-hidden="true">✓</span><span data-cfg="texts.eyebrow">Campanha oficial</span></p>
+      <h1 data-cfg="texts.headline">Crie sua foto de apoio</h1>
+      <p class="page-header__sub" data-cfg="texts.subhead">Escolha sua foto, ajuste o enquadramento e baixe sua imagem pronta.</p>
+    </div>
+  </header>
+
+  <main class="shell layout">
+
+    <section class="card editor" aria-labelledby="editor-title">
+      <div class="card__head">
+        <div>
+          <p class="step">Passo 1</p>
+          <h2 id="editor-title">Escolha e enquadre sua foto</h2>
+        </div>
+        <p class="badge">100% no seu dispositivo</p>
+      </div>
+
+      <div class="stage" id="stage">
+        <canvas id="preview" class="stage__canvas" width="1000" height="1000"
+                role="img" aria-label="Prévia da sua foto com a moldura da campanha"></canvas>
+
+        <div class="stage__empty" id="emptyState">
+          <span class="stage__plus" aria-hidden="true">+</span>
+          <p class="stage__title">Escolha uma foto para começar</p>
+          <p class="stage__hint">JPG, PNG ou WEBP</p>
+        </div>
+
+        <p class="stage__loading" id="loadingState" role="status" aria-live="polite" hidden>Carregando foto…</p>
+      </div>
+
+      <p class="drag-hint" id="dragHint" hidden>Arraste a foto para posicionar. Use dois dedos ou o controle abaixo para ajustar o zoom.</p>
+
+      <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" class="sr-only">
+      <button type="button" class="btn btn--primary" id="pickBtn">Escolher minha foto</button>
+
+      <p class="privacy"><span aria-hidden="true">🔒</span> <span data-cfg="texts.privacyNote">Sua foto é processada somente no seu dispositivo e não é enviada para nenhum servidor.</span></p>
+
+      <div class="controls" id="controls" hidden>
+        <div class="controls__row">
+          <label for="zoom">Zoom</label>
+          <output id="zoomValue" for="zoom">100%</output>
+        </div>
+        <input type="range" id="zoom" min="100" max="400" step="1" value="100" aria-describedby="zoomValue">
+        <div class="controls__buttons">
+          <button type="button" class="btn btn--ghost" id="centerBtn">Centralizar</button>
+          <button type="button" class="btn btn--ghost" id="resetBtn">Redefinir</button>
+        </div>
+      </div>
+
+      <hr class="rule">
+
+      <p class="step">Passo 2</p>
+      <button type="button" class="btn btn--primary btn--download" id="downloadBtn" disabled>
+        <span aria-hidden="true">↓</span> Baixar imagem pronta
+      </button>
+      <button type="button" class="btn btn--ghost btn--block" id="shareBtn" hidden>Compartilhar</button>
+      <p class="fineprint">O arquivo será salvo em PNG na resolução original da arte.</p>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <aside class="side">
+      <section class="card" aria-labelledby="frames-title">
+        <p class="step">Escolha a arte</p>
+        <h2 id="frames-title">Molduras disponíveis</h2>
+        <p class="card__sub">Toque em uma miniatura para trocar a moldura.</p>
+        <div class="frames" id="frames" role="radiogroup" aria-label="Molduras disponíveis"></div>
+      </section>
+
+      <section class="card" aria-labelledby="steps-title">
+        <p class="step">É simples</p>
+        <h2 id="steps-title">Sua foto pronta em 4 passos</h2>
+        <ol class="steps" id="steps"></ol>
+        <p class="tip"><strong>Dica:</strong> <span data-cfg="texts.tip"></span></p>
+      </section>
+    </aside>
+
+  </main>
+
+  <footer class="page-footer">
+    <div class="shell">
+      <p class="legal" id="legal" hidden></p>
+      <p class="credits" id="credits" hidden>
+        <span id="creditsText"></span>
+        <a id="creditsLink" href="#" target="_blank" rel="noopener noreferrer"></a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

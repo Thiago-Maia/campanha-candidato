@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- MODELO DE EXEMPLO (MVP). Substitua por assets/moldura2.png quando a arte
+       final chegar. Marcadores: {{NOME}} {{NUMERO}} {{PARTIDO}} {{SLOGAN}} -->
+  <defs>
+    <linearGradient id="diagonal" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="{{COR_ESCURA}}"/>
+      <stop offset="1" stop-color="{{COR_PRIMARIA}}"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .nome  { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; }
+    .texto { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; }
+  </style>
+
+  <!-- selo circular com o numero -->
+  <circle cx="852" cy="150" r="104" fill="{{COR_DESTAQUE}}"/>
+  <circle cx="852" cy="150" r="104" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.7"/>
+  <text class="texto" x="852" y="118" font-size="24" fill="{{COR_ESCURA}}"
+        text-anchor="middle" letter-spacing="3">VOTE</text>
+  <text class="nome" x="852" y="183" font-size="56" fill="{{COR_ESCURA}}"
+        text-anchor="middle">{{NUMERO}}</text>
+
+  <!-- faixa diagonal inferior -->
+  <polygon points="0,1000 0,742 1000,846 1000,1000" fill="{{COR_DESTAQUE}}" opacity="0.5"/>
+  <polygon points="0,1000 0,796 1000,894 1000,1000" fill="url(#diagonal)"/>
+
+  <!-- nome e slogan -->
+  <text class="nome" x="64" y="922" font-size="62" fill="#ffffff">{{NOME}}</text>
+  <text class="texto" x="66" y="963" font-size="25" fill="#ffffff" opacity="0.82"
+        letter-spacing="2">{{SLOGAN}}</text>
+
+  <!-- etiqueta do partido -->
+  <rect x="62" y="62" width="240" height="62" rx="31" fill="{{COR_PRIMARIA}}"/>
+  <text class="texto" x="182" y="103" font-size="26" fill="#ffffff"
+        text-anchor="middle" letter-spacing="4">{{PARTIDO}}</text>
+</svg>
